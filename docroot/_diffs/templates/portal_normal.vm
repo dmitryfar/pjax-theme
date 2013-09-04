@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+#if ( $request.getHeader("X-PJAX") )
+	#parse($portal_normal_content)
+#else
+	#parse($portal_normal_main)
+#end

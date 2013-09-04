@@ -1,0 +1,12 @@
+#*
+This file allows you to override and define new Velocity variables.
+*#
+
+#set ($portal_normal_main = "${full_templates_path}/portal_normal_main.vm")
+#set ($portal_normal_content = "${full_templates_path}/portal_normal_content.vm")
+
+#set ( $roleLocalService = $serviceLocator.findService("com.liferay.portal.service.RoleLocalService") )
+#set ( $is_administrator = $roleLocalService.hasUserRole($user.userId, $company_id, "Administrator", false))
+#set ( $is_power_user = $roleLocalService.hasUserRole($user.userId, $company_id, "Power User", false))
+#set ( $is_user = $roleLocalService.hasUserRole($user.userId, $company_id, "User", false))
+#set ( $is_guest = $roleLocalService.hasUserRole($user.userId, $company_id, "Guest", false))
